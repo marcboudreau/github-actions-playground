@@ -15,10 +15,10 @@ jobs:
     - id: github-context
       name: Print GitHub Context
       run: |
-        echo "${{ toJSON( github ) }}"
+        echo '${{ toJSON( github ) }}'
     - id: env-context
       name: Print Env Context
       env:
         SAMPLE_STEP_VARIABLE: sample
       run: |
-        echo "${{ toJSON(env) }}"
+        echo '${{ toJSON(env) }}'

@@ -21,4 +21,20 @@ jobs:
       env:
         SAMPLE_STEP_VARIABLE: sample
       run: |
-        echo '${{ toJSON(env) }}'
+        echo '${{ toJSON( env ) }}'
+    - id: vars-context
+      name: Print Vars Context
+      run: |
+        echo '${{ toJSON( vars ) }}'
+    - id: job-context
+      name: Print Job Context
+      run: |
+        echo '${{ toJSON( job ) }}'
+    - id: steps-context
+      name: Print Steps Context
+      run: |
+        echo '${{ toJSON( steps ) }}'
+    - id: runner-context
+      name: Print Runner Context
+      run: |
+        echo '${{ toJSON( runner ) }}'

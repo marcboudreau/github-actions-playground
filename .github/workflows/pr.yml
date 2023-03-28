@@ -1,0 +1,24 @@
+name: Pull Request Workflow
+on:
+  pull_request:
+
+env:
+  SAMPLE_WORKFLOW_VARIABLE: sample
+
+jobs:
+  main:
+    name: Main
+    runs-on: ubuntu-latest
+    env:
+      SAMPLE_JOB_VARIABLE: sample
+    steps:
+    - id: github-context
+      name: Print GitHub Context
+      run: |
+        echo "${{ github }}"
+    - id: env-context
+      name: Print Env Context
+      env:
+        SAMPLE_STEP_VARIABLE: sample
+      run: |
+        echo "${{ env }}"

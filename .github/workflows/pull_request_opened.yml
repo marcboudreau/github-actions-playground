@@ -1,0 +1,9 @@
+name: Pull Request - Opened
+on:
+  pull_request:
+    types:
+      - opened
+jobs:
+  print-context:
+    concurrency: pull_request_opened-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

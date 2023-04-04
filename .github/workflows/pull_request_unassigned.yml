@@ -1,0 +1,9 @@
+name: Pull Request - Unassigned
+on:
+  pull_request:
+    types:
+      - unassigned
+jobs:
+  print-context:
+    concurrency: pull_request_unassigned-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

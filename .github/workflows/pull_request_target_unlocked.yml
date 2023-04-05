@@ -1,0 +1,9 @@
+name: Pull Request Target - Unlocked
+on:
+  pull_request_target:
+    types:
+      - unlocked
+jobs:
+  print-context:
+    concurrency: pull_request_target_unlocked-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

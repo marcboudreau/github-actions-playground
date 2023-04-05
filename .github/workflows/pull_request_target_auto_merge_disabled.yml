@@ -1,0 +1,9 @@
+name: Pull Request Target - Auto Merge Disabled
+on:
+  pull_request_target:
+    types:
+      - auto_merge_disabled
+jobs:
+  print-context:
+    concurrency: pull_request_target_auto_merge_disabled-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

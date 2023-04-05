@@ -1,0 +1,9 @@
+name: Pull Request Review - Dismissed
+on:
+  pull_request_review:
+    types:
+      - dismissed
+jobs:
+  print-context:
+    concurrency: pull_request_review_dismissed-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

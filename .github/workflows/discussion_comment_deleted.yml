@@ -1,0 +1,9 @@
+name: Discussion Comment - Deleted
+on:
+  discussion_comment:
+    types:
+      - deleted
+jobs:
+  print-context:
+    concurrency: discussion_comment_deleted-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

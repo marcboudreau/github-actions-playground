@@ -1,0 +1,9 @@
+name: Pull Request Target - Labeled
+on:
+  pull_request_target:
+    types:
+      - labeled
+jobs:
+  print-context:
+    concurrency: pull_request_target_labeled-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

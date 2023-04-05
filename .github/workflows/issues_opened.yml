@@ -1,0 +1,9 @@
+name: Issues - Opened
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  print-context:
+    concurrency: issues_opened-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

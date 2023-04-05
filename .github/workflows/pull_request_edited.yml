@@ -1,0 +1,9 @@
+name: Pull Request - Edited
+on:
+  pull_request:
+    types:
+      - edited
+jobs:
+  print-context:
+    concurrency: pull_request_edited-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

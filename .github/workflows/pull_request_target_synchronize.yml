@@ -1,0 +1,9 @@
+name: Pull Request Target - Synchronize
+on:
+  pull_request_target:
+    types:
+      - synchronize
+jobs:
+  print-context:
+    concurrency: pull_request_target_synchronize-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

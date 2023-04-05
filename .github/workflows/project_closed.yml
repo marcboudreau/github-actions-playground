@@ -1,0 +1,9 @@
+name: Project - Closed
+on:
+  project:
+    types:
+      - closed
+jobs:
+  print-context:
+    concurrency: project_closed-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

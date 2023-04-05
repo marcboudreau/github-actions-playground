@@ -1,0 +1,9 @@
+name: Project Card - Created
+on:
+  project_card:
+    types:
+      - created
+jobs:
+  print-context:
+    concurrency: project_card_created-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

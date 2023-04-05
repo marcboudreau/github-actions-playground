@@ -1,0 +1,9 @@
+name: Release - Create
+on:
+  release:
+    types:
+      - created
+jobs:
+  print-context:
+    concurrency: release_created-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

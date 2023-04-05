@@ -1,0 +1,9 @@
+name: Branch Protection Rule - Deleted
+on:
+  branch_protection_rule:
+    types:
+      - deleted
+jobs:
+  print-context:
+    concurrency: branch_protection_rule_deleted-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

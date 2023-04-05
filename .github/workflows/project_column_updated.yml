@@ -1,0 +1,9 @@
+name: Project Column - Updated
+on:
+  project_column:
+    types:
+      - updated
+jobs:
+  print-context:
+    concurrency: project_column_updated-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

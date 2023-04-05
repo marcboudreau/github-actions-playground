@@ -1,0 +1,9 @@
+name: Check Run - Rerequested
+on:
+  check_run:
+    types:
+      - rerequested
+jobs:
+  print-context:
+    concurrency: check_run_rerequested-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

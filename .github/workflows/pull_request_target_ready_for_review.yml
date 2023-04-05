@@ -1,0 +1,9 @@
+name: Pull Request Target - Ready for Review
+on:
+  pull_request_target:
+    types:
+      - ready_for_review
+jobs:
+  print-context:
+    concurrency: pull_request_target_ready_for_review-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

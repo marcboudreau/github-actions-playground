@@ -1,0 +1,9 @@
+name: Milestone - Opened
+on:
+  milestone:
+    types:
+      - opened
+jobs:
+  print-context:
+    concurrency: milestone_opened-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

@@ -1,0 +1,7 @@
+name: Page Build
+on:
+  page_build:
+jobs:
+  print-context:
+    concurrency: page_build-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

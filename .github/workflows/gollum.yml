@@ -1,0 +1,7 @@
+name: Gollum
+on:
+  gollum:
+jobs:
+  print-context:
+    concurrency: gollum-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

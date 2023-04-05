@@ -1,0 +1,9 @@
+name: Issues - Demilestoned
+on:
+  issues:
+    types:
+      - demilestoned
+jobs:
+  print-context:
+    concurrency: issues_demilestoned-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

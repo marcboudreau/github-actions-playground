@@ -1,0 +1,9 @@
+name: Watch - Started
+on:
+  watch:
+    types:
+      - started
+jobs:
+  print-context:
+    concurrency: watch_started-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

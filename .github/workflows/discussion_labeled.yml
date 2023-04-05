@@ -1,0 +1,9 @@
+name: Discussion - Labeled
+on:
+  discussion:
+    types:
+      - labeled
+jobs:
+  print-context:
+    concurrency: discussion_labeled-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

@@ -1,0 +1,9 @@
+name: Project Column - Created
+on:
+  project_column:
+    types:
+      - created
+jobs:
+  print-context:
+    concurrency: project_column_created-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

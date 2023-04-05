@@ -1,0 +1,9 @@
+name: Project Column - Moved
+on:
+  project_column:
+    types:
+      - moved
+jobs:
+  print-context:
+    concurrency: project_column_moved-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

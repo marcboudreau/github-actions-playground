@@ -1,0 +1,9 @@
+name: Pull Request Target - Convert to Draft
+on:
+  pull_request_target:
+    types:
+      - converted_to_draft
+jobs:
+  print-context:
+    concurrency: pull_request_target_converted_to_draft-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

@@ -1,0 +1,9 @@
+name: Discussion - Answered
+on:
+  discussion:
+    types:
+      - answered
+jobs:
+  print-context:
+    concurrency: discussion_answered-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

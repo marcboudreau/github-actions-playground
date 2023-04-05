@@ -1,0 +1,9 @@
+name: Pull Request Review Comment - Deleted
+on:
+  pull_request_review_comment:
+    types:
+      - deleted
+jobs:
+  print-context:
+    concurrency: pull_request_review_comment_deleted-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

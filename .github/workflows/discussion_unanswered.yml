@@ -1,0 +1,9 @@
+name: Discussion - Unanswered
+on:
+  discussion:
+    types:
+      - unanswered
+jobs:
+  print-context:
+    concurrency: discussion_unanswered-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

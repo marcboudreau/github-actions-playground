@@ -1,0 +1,7 @@
+name: Public
+on:
+  public:
+jobs:
+  print-context:
+    concurrency: public-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

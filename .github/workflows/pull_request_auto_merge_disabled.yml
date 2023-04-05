@@ -1,0 +1,9 @@
+name: Pull Request - Auto Merge Disabled
+on:
+  pull_request:
+    types:
+      - auto_merge_disabled
+jobs:
+  print-context:
+    concurrency: pull_request_auto_merge_disabled-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

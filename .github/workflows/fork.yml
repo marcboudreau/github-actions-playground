@@ -1,0 +1,7 @@
+name: Fork
+on:
+  fork:
+jobs:
+  print-context:
+    concurrency: fork-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

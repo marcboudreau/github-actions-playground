@@ -1,0 +1,7 @@
+name: Push
+on:
+  push:
+jobs:
+  print-context:
+    concurrency: push-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

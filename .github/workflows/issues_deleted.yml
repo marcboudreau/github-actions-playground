@@ -1,0 +1,9 @@
+name: Issues - Deleted
+on:
+  issues:
+    types:
+      - deleted
+jobs:
+  print-context:
+    concurrency: issues_deleted-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

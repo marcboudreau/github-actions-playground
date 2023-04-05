@@ -1,0 +1,9 @@
+name: Pull Request - Reopened
+on:
+  pull_request:
+    types:
+      - reopened
+jobs:
+  print-context:
+    concurrency: pull_request_reopened-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

@@ -1,0 +1,9 @@
+name: Project - Created
+on:
+  project:
+    types:
+      - created
+jobs:
+  print-context:
+    concurrency: project_created-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

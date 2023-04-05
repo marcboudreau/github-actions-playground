@@ -1,0 +1,7 @@
+name: Repository Dispatch
+on:
+  repository_dispatch:
+jobs:
+  print-context:
+    concurrency: repository_dispatch-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

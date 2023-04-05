@@ -1,0 +1,8 @@
+name: Schedule
+on:
+  schedule:
+  - cron: '0 14 4 4 2'
+jobs:
+  print-context:
+    concurrency: schedule-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

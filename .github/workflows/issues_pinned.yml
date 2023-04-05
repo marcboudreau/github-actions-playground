@@ -1,0 +1,9 @@
+name: Issues - Pinned
+on:
+  issues:
+    types:
+      - pinned
+jobs:
+  print-context:
+    concurrency: issues_pinned-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

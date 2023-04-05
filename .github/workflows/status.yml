@@ -1,0 +1,7 @@
+name: Status
+on:
+  status:
+jobs:
+  print-context:
+    concurrency: status-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

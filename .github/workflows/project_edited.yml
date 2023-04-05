@@ -1,0 +1,9 @@
+name: Project - Edited
+on:
+  project:
+    types:
+      - edited
+jobs:
+  print-context:
+    concurrency: project_edited-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

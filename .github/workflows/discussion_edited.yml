@@ -1,0 +1,9 @@
+name: Discussion - Edited
+on:
+  discussion:
+    types:
+      - edited
+jobs:
+  print-context:
+    concurrency: discussion_edited-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

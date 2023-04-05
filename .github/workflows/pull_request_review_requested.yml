@@ -1,0 +1,9 @@
+name: Pull Request - Review Requested
+on:
+  pull_request:
+    types:
+      - review_requested
+jobs:
+  print-context:
+    concurrency: pull_request_review_requested-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

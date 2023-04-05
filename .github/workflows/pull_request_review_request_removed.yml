@@ -1,0 +1,9 @@
+name: Pull Request - Review Request Removed
+on:
+  pull_request:
+    types:
+      - review_request_removed
+jobs:
+  print-context:
+    concurrency: pull_request_review_request_removed-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

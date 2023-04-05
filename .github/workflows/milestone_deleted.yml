@@ -1,0 +1,9 @@
+name: Milestone - Deleted
+on:
+  milestone:
+    types:
+      - deleted
+jobs:
+  print-context:
+    concurrency: milestone_deleted-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

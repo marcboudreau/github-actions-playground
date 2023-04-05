@@ -1,0 +1,9 @@
+name: Label - Deleted
+on:
+  label:
+    types:
+      - deleted
+jobs:
+  print-context:
+    concurrency: label_deleted-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

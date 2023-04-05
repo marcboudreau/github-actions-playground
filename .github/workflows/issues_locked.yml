@@ -1,0 +1,9 @@
+name: Issues - Locked
+on:
+  issues:
+    types:
+      - locked
+jobs:
+  print-context:
+    concurrency: issues_locked-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

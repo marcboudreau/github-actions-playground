@@ -1,0 +1,9 @@
+name: Label - Created
+on:
+  label:
+    types:
+      - created
+jobs:
+  print-context:
+    concurrency: label_created-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

@@ -1,0 +1,11 @@
+name: Workflow Run - Requested
+on:
+  workflow_run:
+    types:
+      - requested
+    workflows:
+      - Push
+jobs:
+  print-context:
+    concurrency: workflow_run_requested-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

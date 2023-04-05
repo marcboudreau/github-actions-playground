@@ -1,0 +1,9 @@
+name: Release - Deleted
+on:
+  release:
+    types:
+      - deleted
+jobs:
+  print-context:
+    concurrency: release_deleted-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

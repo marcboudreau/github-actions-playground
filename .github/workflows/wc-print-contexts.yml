@@ -1,0 +1,45 @@
+name: Print Contexts
+on:
+  workflow_call:
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    environment: Primary
+    outputs:
+      SAMPLE_JOB_OUTPUT: sample
+    env:
+      SAMPLE_JOB_ENVIRONMENT_VARIABLE: sample
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./
+    steps:
+      - id: github-context
+        name: Print github Context
+        run: |
+          echo '${{ toJSON( github ) }}'
+      - id: env-context
+        name: Print env Context
+        run: |
+          echo '${{ toJSON( env ) }}'
+      - id: vars-context
+        name: Print vars Context
+        run: |
+          echo '${{ toJSON( vars ) }}'
+      - id: job-context
+        name: Print job Context
+        run: |
+          echo '${{ toJSON( job ) }}'
+      - id: jobs-context
+        name: Print jobs Context
+        run: |
+          echo '${{ toJSON( jobs ) }}'
+      - id: steps-context
+        name: Print steps Context
+        run: |
+          echo '${{ toJSON( steps ) }}'
+      - id: secrets-context
+        name: Print secrets Context
+        run: |
+          echo '${{ toJSON( secrets ) }}'
+

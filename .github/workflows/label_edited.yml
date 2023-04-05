@@ -1,0 +1,9 @@
+name: Label - Edited
+on:
+  label:
+    types:
+      - edited
+jobs:
+  print-context:
+    concurrency: label_edited-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

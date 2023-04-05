@@ -1,0 +1,9 @@
+name: Check Suite - Completed
+on:
+  check_suite:
+    types:
+      - completed
+jobs:
+  print-context:
+    concurrency: check_suite_completed-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

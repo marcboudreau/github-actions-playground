@@ -1,0 +1,9 @@
+name: Pull Request - Unlabeled
+on:
+  pull_request:
+    types:
+      - unlabeled
+jobs:
+  print-context:
+    concurrency: pull_request_unlabeled-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

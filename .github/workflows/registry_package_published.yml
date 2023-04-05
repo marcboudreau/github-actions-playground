@@ -1,0 +1,9 @@
+name: Registry Package - Published
+on:
+  registry_package:
+    types:
+      - published
+jobs:
+  print-context:
+    concurrency: registry_package_published-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

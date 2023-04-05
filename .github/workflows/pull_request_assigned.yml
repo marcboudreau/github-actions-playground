@@ -1,0 +1,9 @@
+name: Pull Request - Assigned
+on:
+  pull_request:
+    types:
+      - assigned
+jobs:
+  print-context:
+    concurrency: pull_request_assigned-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

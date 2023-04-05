@@ -1,0 +1,7 @@
+name: Delete
+on:
+  delete:
+jobs:
+  print-context:
+    concurrency: delete-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

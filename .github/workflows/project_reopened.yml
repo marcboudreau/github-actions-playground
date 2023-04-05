@@ -1,0 +1,9 @@
+name: Project - Reopened
+on:
+  project:
+    types:
+      - reopened
+jobs:
+  print-context:
+    concurrency: project_reopened-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

@@ -1,0 +1,9 @@
+name: Project Card - Deleted
+on:
+  project_card:
+    types:
+      - deleted
+jobs:
+  print-context:
+    concurrency: project_card_deleted-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

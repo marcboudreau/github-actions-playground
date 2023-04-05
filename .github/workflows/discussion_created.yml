@@ -1,0 +1,9 @@
+name: Discussion - Created
+on:
+  discussion:
+    types:
+      - created
+jobs:
+  print-context:
+    concurrency: discussion_created-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

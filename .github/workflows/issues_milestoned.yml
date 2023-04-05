@@ -1,0 +1,9 @@
+name: Issues - Milestoned
+on:
+  issues:
+    types:
+      - milestoned
+jobs:
+  print-context:
+    concurrency: issues_milestoned-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

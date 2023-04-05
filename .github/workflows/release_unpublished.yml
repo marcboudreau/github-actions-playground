@@ -1,0 +1,9 @@
+name: Release - Unpublished
+on:
+  release:
+    types:
+      - unpublished
+jobs:
+  print-context:
+    concurrency: release_unpublished-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

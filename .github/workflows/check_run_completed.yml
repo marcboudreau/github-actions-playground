@@ -1,0 +1,9 @@
+name: Check Run - Completed
+on:
+  check_run:
+    types:
+      - completed
+jobs:
+  print-context:
+    concurrency: check_run_completed-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

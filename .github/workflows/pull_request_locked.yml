@@ -1,0 +1,9 @@
+name: Pull Request - Locked
+on:
+  pull_request:
+    types:
+      - locked
+jobs:
+  print-context:
+    concurrency: pull_request_locked-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

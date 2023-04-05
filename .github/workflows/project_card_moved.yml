@@ -1,0 +1,9 @@
+name: Project Card - Moved
+on:
+  project_card:
+    types:
+      - moved
+jobs:
+  print-context:
+    concurrency: project_card_moved-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

@@ -1,0 +1,9 @@
+name: Pull Request Review Comment - Created
+on:
+  pull_request_review_comment:
+    types:
+      - created
+jobs:
+  print-context:
+    concurrency: pull_request_review_comment_created-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

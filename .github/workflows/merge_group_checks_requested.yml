@@ -1,0 +1,9 @@
+name: Merge Group - Checks Requested
+on:
+  merge_group:
+    types:
+      - checks_requested
+jobs:
+  print-context:
+    concurrency: merge_group_checks_requested-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

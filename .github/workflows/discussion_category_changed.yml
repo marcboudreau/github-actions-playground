@@ -1,0 +1,9 @@
+name: Discussion - Category Changed
+on:
+  discussion:
+    types:
+      - category_changed
+jobs:
+  print-context:
+    concurrency: discussion_category_changed-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

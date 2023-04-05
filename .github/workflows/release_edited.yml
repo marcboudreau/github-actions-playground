@@ -1,0 +1,9 @@
+name: Release - Edited
+on:
+  release:
+    types:
+      - edited
+jobs:
+  print-context:
+    concurrency: release_edited-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

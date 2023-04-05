@@ -1,0 +1,9 @@
+name: Check Run - Created
+on:
+  check_run:
+    types:
+      - created
+jobs:
+  print-context:
+    concurrency: check_run_created-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

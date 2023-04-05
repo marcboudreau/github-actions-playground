@@ -1,0 +1,7 @@
+name: Create
+on:
+  create:
+jobs:
+  print-context:
+    concurrency: create-${{ github.ref }}
+    uses: ./.github/workflows/wc-print-context.yml

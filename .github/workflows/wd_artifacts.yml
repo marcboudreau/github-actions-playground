@@ -23,7 +23,7 @@ jobs:
       id: create-artifact
       if: steps.get-previous-artifact.outcome == 'failure'
       run: |
-        date > ./my-artifact.txt
+        date | tee ./my-artifact.txt
     - name: Upload Updated Artifact
       id: upload-updated-artifact
       uses: actions/upload-artifact@v3

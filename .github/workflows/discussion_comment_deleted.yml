@@ -6,4 +6,4 @@ on:
 jobs:
   print-context:
     concurrency: discussion_comment_deleted-${{ github.ref }}
-    uses: ./.github/workflows/wc-print-context.yml
+    uses: ./.github/workflows/wc-print-contexts.yml

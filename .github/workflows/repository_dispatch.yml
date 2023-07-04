@@ -4,4 +4,4 @@ on:
 jobs:
   print-context:
     concurrency: repository_dispatch-${{ github.ref }}
-    uses: ./.github/workflows/wc-print-context.yml
+    uses: ./.github/workflows/wc-print-contexts.yml

@@ -6,4 +6,4 @@ on:
 jobs:
   print-context:
     concurrency: pull_request_review_dismissed-${{ github.ref }}
-    uses: ./.github/workflows/wc-print-context.yml
+    uses: ./.github/workflows/wc-print-contexts.yml

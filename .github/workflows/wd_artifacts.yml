@@ -13,8 +13,22 @@ jobs:
         GH_TOKEN: ${{ github.token }}
       run: |
         gh run download -n my-artifact
+      continue-on-error: true
     - name: List all files
       id: list-all-files
       run: |
         ls -alR
+      if: steps.get-previous-artifact.outcome != 'failure'
+    - name: Create Artifact
+      id: create-artifact
+      if: steps.get-previous-artifact.outcome == 'failure'
+      run: |
+        date > ./my-artifact.txt
+    - name: Upload Updated Artifact
+      id: upload-updated-artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: ./my-artifact.txt
+      
 

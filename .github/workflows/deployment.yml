@@ -1,7 +1,0 @@
-name: Deployment
-on:
-  deployment:
-jobs:
-  print-context:
-    concurrency: deployment-${{ github.ref }}
-    uses: ./.github/workflows/wc-print-contexts.yml

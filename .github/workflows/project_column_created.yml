@@ -6,4 +6,4 @@ on:
 jobs:
   print-context:
     concurrency: project_column_created-${{ github.ref }}
-    uses: ./.github/workflows/wc-print-context.yml
+    uses: ./.github/workflows/wc-print-contexts.yml

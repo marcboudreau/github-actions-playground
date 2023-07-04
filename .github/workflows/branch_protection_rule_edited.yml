@@ -6,4 +6,4 @@ on:
 jobs:
   print-context:
     concurrency: branch_protection_rule_edited-${{ github.ref }}
-    uses: ./.github/workflows/wc-print-context.yml
+    uses: ./.github/workflows/wc-print-contexts.yml

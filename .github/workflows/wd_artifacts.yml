@@ -1,0 +1,18 @@
+name: Workflow Artifact
+on:
+  workflow_dispatch
+jobs:
+  update-artifact:
+    name: Update Artifact
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Get Previous Artifact
+      id: get-previous-artifact
+      run: |
+        gh run download -n my-artifact
+    - name: List all files
+      id: list-all-files
+      run: |
+        ls -alR
+

@@ -30,10 +30,6 @@ jobs:
         name: Print job Context
         run: |
           echo '${{ toJSON( job ) }}'
-      - id: jobs-context
-        name: Print jobs Context
-        run: |
-          echo '${{ toJSON( jobs ) }}'
       - id: steps-context
         name: Print steps Context
         run: |
